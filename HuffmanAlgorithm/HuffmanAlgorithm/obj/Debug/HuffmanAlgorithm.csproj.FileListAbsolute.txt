@@ -1,0 +1,10 @@
+I:\git\CSharp\HuffmanAlgorithm\HuffmanAlgorithm\bin\Debug\HuffmanAlgorithm.exe.config
+I:\git\CSharp\HuffmanAlgorithm\HuffmanAlgorithm\bin\Debug\HuffmanAlgorithm.exe
+I:\git\CSharp\HuffmanAlgorithm\HuffmanAlgorithm\bin\Debug\HuffmanAlgorithm.pdb
+I:\git\CSharp\HuffmanAlgorithm\HuffmanAlgorithm\bin\Debug\System.Numerics.Vectors.dll
+I:\git\CSharp\HuffmanAlgorithm\HuffmanAlgorithm\bin\Debug\System.Numerics.Vectors.xml
+I:\git\CSharp\HuffmanAlgorithm\HuffmanAlgorithm\obj\Debug\HuffmanAlgorithm.csprojAssemblyReference.cache
+I:\git\CSharp\HuffmanAlgorithm\HuffmanAlgorithm\obj\Debug\HuffmanAlgorithm.csproj.CoreCompileInputs.cache
+I:\git\CSharp\HuffmanAlgorithm\HuffmanAlgorithm\obj\Debug\HuffmanAlgorithm.csproj.CopyComplete
+I:\git\CSharp\HuffmanAlgorithm\HuffmanAlgorithm\obj\Debug\HuffmanAlgorithm.exe
+I:\git\CSharp\HuffmanAlgorithm\HuffmanAlgorithm\obj\Debug\HuffmanAlgorithm.pdb
