@@ -6,44 +6,67 @@ using System.Threading.Tasks;
 
 namespace HuffmanAlgorithm
 {
-        public class Haffman
+    public class Haffman
+    {
+        private class Node
         {
-            private class Node
-            {
-                public object inf;
-                public int number;
-                public int weight;
-                public Node left;
-                public Node rigth;
+            public object inf;
+            public char key;
+            public Node left;
+            public Node right;
 
-                public Node(object nodeInf) //конструктор вложенного класса, создает узел дерева
-                {
-                    inf = nodeInf;
-                    number = 0;
-                    weight = 0;
-                    left = null;
-                    rigth = null;
-                }
+            public Node(int a)
+            {
+                inf = a;
+                left = null;
+                right = null;
+                key = '\0';
+            }
 
-                public static void Add(ref Node r, int weight)
-                {
-                    Dictionary<Node,int> list = new Dictionary<Node, int>();
-                    
-                }    
+            public Node(KeyValuePair<char, int> a)
+            {
+                inf = a.Value;
+                left = null;
+                right = null;
+                key = a.Key;
             }
-            Node tree;
 
-            public Haffman()//открытый конструктор
+            public Node(Node firstNode, Node secondNode)
             {
-                tree = null;
+                Node node = new Node((int)firstNode.inf + (int)secondNode.inf);
+                node.left = firstNode;
+                node.right = secondNode;
             }
-            private Haffman(Node r)
+        }
+
+        Node tree;
+        List<Node> nodes;
+        public Haffman(Dictionary<char,int> dic) 
+        {
+            nodes = new List<Node>();
+            foreach(KeyValuePair<char,int> item in dic.OrderBy(key => key.Value))
             {
-                tree = r;
+                Node node = new Node(item);
+                nodes.Add(node);
             }
-            public void Add(Dictionary<char, int> tempDic)
+            CreateHaffmanTree();
+        }
+
+        public void CreateHaffmanTree()
+        {
+            if(nodes.Count == 1)
             {
-                Node.Add();
+                tree = nodes[0];
             }
+            else
+            {
+                Node created = new Node(nodes[0], nodes[1]);
+                nodes.RemoveAt(0);
+                nodes.RemoveAt(1);
+                nodes.Add(created);
+                nodes.Sort();
+                CreateHaffmanTree();
+            }
+        }
     }
 }

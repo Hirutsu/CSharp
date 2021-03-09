@@ -26,8 +26,7 @@ namespace HuffmanAlgorithm
             {
                 Console.WriteLine(item.Key + " " + item.Value);
             }
-            Haffman tree = new Haffman();
-            tree.Add(dic);
+            Haffman tree = new Haffman(dic);
         }
     }
 }
