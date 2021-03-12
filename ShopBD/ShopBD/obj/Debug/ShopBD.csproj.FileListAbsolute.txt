@@ -1,0 +1,7 @@
+I:\git\CSharp\ShopBD\ShopBD\obj\Debug\ShopBD.csprojAssemblyReference.cache
+I:\git\CSharp\ShopBD\ShopBD\obj\Debug\ShopBD.csproj.CoreCompileInputs.cache
+I:\git\CSharp\ShopBD\ShopBD\bin\Debug\ShopBD.exe.config
+I:\git\CSharp\ShopBD\ShopBD\bin\Debug\ShopBD.exe
+I:\git\CSharp\ShopBD\ShopBD\bin\Debug\ShopBD.pdb
+I:\git\CSharp\ShopBD\ShopBD\obj\Debug\ShopBD.exe
+I:\git\CSharp\ShopBD\ShopBD\obj\Debug\ShopBD.pdb
