@@ -1,0 +1,10 @@
+I:\git\CSharp\ShopWInForm\ShopWInForm\bin\Debug\ShopWInForm.exe.config
+I:\git\CSharp\ShopWInForm\ShopWInForm\bin\Debug\ShopWInForm.exe
+I:\git\CSharp\ShopWInForm\ShopWInForm\bin\Debug\ShopWInForm.pdb
+I:\git\CSharp\ShopWInForm\ShopWInForm\obj\Debug\ShopWInForm.csprojAssemblyReference.cache
+I:\git\CSharp\ShopWInForm\ShopWInForm\obj\Debug\ShopWInForm.Form1.resources
+I:\git\CSharp\ShopWInForm\ShopWInForm\obj\Debug\ShopWInForm.Properties.Resources.resources
+I:\git\CSharp\ShopWInForm\ShopWInForm\obj\Debug\ShopWInForm.csproj.GenerateResource.cache
+I:\git\CSharp\ShopWInForm\ShopWInForm\obj\Debug\ShopWInForm.csproj.CoreCompileInputs.cache
+I:\git\CSharp\ShopWInForm\ShopWInForm\obj\Debug\ShopWInForm.exe
+I:\git\CSharp\ShopWInForm\ShopWInForm\obj\Debug\ShopWInForm.pdb
