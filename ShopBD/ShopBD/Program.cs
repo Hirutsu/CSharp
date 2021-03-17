@@ -91,6 +91,37 @@ namespace ShopBD
                 {
                     streamWriter.WriteLine("Таких товаров нет");
                 }
+                Console.WriteLine("Удаление всех акций:");
+                foreach (var item in listShop)
+                {
+                    if (item.GetSale() != 0)
+                    {
+                        item.SetSale(0, null, null);
+                    }
+                }
+                Console.WriteLine("Полный список товаров:");
+                foreach (var item in listShop)
+                {
+                    Console.WriteLine(item.ToString());
+                }
+
+                Console.WriteLine("Введите id:");
+                int idProduct = Convert.ToInt32(Console.ReadLine());
+                foreach (var item in listShop)
+                {
+                    if (item.GetId() == idProduct)
+                    {
+                        int saleProduct = Convert.ToInt32(Console.ReadLine());
+                        DateTime dtS = Convert.ToDateTime(Console.ReadLine());
+                        DateTime dtE = Convert.ToDateTime(Console.ReadLine());
+                        item.SetSale(saleProduct, dtS, dtE);
+                    }
+                }
+                Console.WriteLine("Полный список товаров:");
+                foreach (var item in listShop)
+                {
+                    Console.WriteLine(item.ToString());
+                }
             }
         }
     }

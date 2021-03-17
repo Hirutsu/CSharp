@@ -36,10 +36,6 @@ namespace ShopBD
                    "; discount price=" + (_priceProduct - _priceProduct * (_sale / 100.0))+
                    "; dtStart="+_dateTimeSaleStart+"; dtEnd="+_dateTimeSaleEnd+"]";
         }
-        public string GetData()
-        {
-            return _nameProduct +" " + _priceProduct + " " + _sale +" " +_dateTimeSaleStart + _dateTimeSaleEnd;
-        }
         public void SetNameProduct(string nameProduct)
         {
             this._nameProduct = nameProduct;
@@ -48,15 +44,25 @@ namespace ShopBD
         {
             this._priceProduct = priceProduct;
         }
-        public void SetSale(int sale)
+        public void SetSale(int sale, DateTime? dtStart, DateTime? dtEnd)
         {
             this._sale = sale;
+            this._dateTimeSaleStart = dtStart;
+            this._dateTimeSaleEnd = dtEnd;
         }
         public void SetAll(string nameProduct, double priceProduct, int sale)
         {
             this._nameProduct = nameProduct;
             this._priceProduct = priceProduct;
             this._sale = sale;
+        }
+        public int GetId()
+        {
+            return _id;
+        }
+        public string GetData()
+        {
+            return _nameProduct +" " + _priceProduct + " " + _sale +" " +_dateTimeSaleStart + _dateTimeSaleEnd;
         }
         public int GetSale()
         {
