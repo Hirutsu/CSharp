@@ -1,0 +1,31 @@
+Полный список товаров
+[id=0; name=песок; price=500; sale=5; discount price=475; dtStart=; dtEnd=]
+[id=1; name=сахар; price=41; sale=0; discount price=41; dtStart=; dtEnd=]
+[id=2; name=печенье; price=50; sale=5; discount price=47,5; dtStart=; dtEnd=]
+[id=3; name=хлеб; price=14; sale=0; discount price=14; dtStart=; dtEnd=]
+[id=4; name=чипсеки; price=189; sale=10; discount price=170,1; dtStart=; dtEnd=]
+[id=5; name=пиво; price=77; sale=0; discount price=77; dtStart=; dtEnd=]
+[id=6; name=семечки; price=25; sale=0; discount price=25; dtStart=; dtEnd=]
+[id=7; name=спрайт; price=99; sale=27; discount price=72,27; dtStart=; dtEnd=]
+[id=8; name=хлеб; price=32; sale=5; discount price=30,4; dtStart=; dtEnd=]
+Акционные товары
+[id=0; name=песок; price=500; sale=5; discount price=475; dtStart=; dtEnd=]
+[id=2; name=печенье; price=50; sale=5; discount price=47,5; dtStart=; dtEnd=]
+[id=4; name=чипсеки; price=189; sale=10; discount price=170,1; dtStart=; dtEnd=]
+[id=7; name=спрайт; price=99; sale=27; discount price=72,27; dtStart=; dtEnd=]
+[id=8; name=хлеб; price=32; sale=5; discount price=30,4; dtStart=; dtEnd=]
+Изменный полный список товаров
+[id=0; name=песок; price=250; sale=5; discount price=237,5; dtStart=; dtEnd=]
+[id=1; name=сахар; price=41; sale=0; discount price=41; dtStart=; dtEnd=]
+[id=2; name=печенье; price=50; sale=5; discount price=47,5; dtStart=; dtEnd=]
+[id=3; name=хлеб; price=14; sale=0; discount price=14; dtStart=; dtEnd=]
+[id=4; name=чипсеки; price=189; sale=10; discount price=170,1; dtStart=; dtEnd=]
+[id=5; name=пиво; price=77; sale=0; discount price=77; dtStart=; dtEnd=]
+[id=6; name=семечки; price=25; sale=0; discount price=25; dtStart=; dtEnd=]
+[id=7; name=спрайт; price=99; sale=27; discount price=72,27; dtStart=; dtEnd=]
+[id=8; name=хлеб; price=32; sale=5; discount price=30,4; dtStart=; dtEnd=]
+Поиск по названию,введите название
+[id=3; name=хлеб; price=14; sale=0; discount price=14; dtStart=; dtEnd=]
+[id=8; name=хлеб; price=32; sale=5; discount price=30,4; dtStart=; dtEnd=]
+Поиск товаров с акцией,введите дату
+Таких товаров нет

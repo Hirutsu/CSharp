@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,78 +12,84 @@ namespace ShopBD
         static void Main(string[] args)
         {
             LinkedList<Shop> listShop = new LinkedList<Shop>();
-            Console.WriteLine("Write size");
-            int size = Convert.ToInt32(Console.ReadLine());
-            for (int index = 0; index < size; index++)
+            string inputFile = @"I:\git\CSharp\ShopBD\ShopBD\Input.txt";
+            string outputFile = @"I:\git\CSharp\ShopBD\ShopBD\Output.txt";
+
+            using (StreamReader streamReader = new StreamReader(inputFile, false))
             {
-                Console.WriteLine("Write name");
-                string name = Console.ReadLine();
-
-                Console.WriteLine("Write price");
-                double price = Convert.ToDouble(Console.ReadLine());
-
-                Console.WriteLine("Write Sale");
-                int sale = Convert.ToInt32(Console.ReadLine());
-
-                Nullable<DateTime> dateTimeStart;
-                Nullable<DateTime> dateTimeEnd;
-                if (sale==0)
+                string line;
+                while ((line = streamReader.ReadLine()) != null)
                 {
-                    dateTimeStart = null;
-                    dateTimeEnd = null;
+                    string[] templine = line.Split();
+                    Shop shop;
+                    if (templine.Length==5)
+                    {
+                        shop = new Shop(templine[0], Convert.ToInt32(templine[1]), Convert.ToInt32(templine[2]), Convert.ToDateTime(templine[3]), Convert.ToDateTime(templine[4]));
+                    }
+                    else 
+                    {
+                        shop = new Shop(templine[0], Convert.ToInt32(templine[1]), Convert.ToInt32(templine[2]),null,null);
+                    }
+                    listShop.AddLast(shop);
                 }
-                else
-                {
-                    Console.WriteLine("Write DateTime Sale Start");
-                    dateTimeStart = Convert.ToDateTime(Console.ReadLine());
-
-                    Console.WriteLine("Write DateTime Sale End");
-                    dateTimeEnd = Convert.ToDateTime(Console.ReadLine());
-                }
-
-                Shop shop = new Shop(name, price, sale, dateTimeStart, dateTimeEnd);
-                listShop.AddLast(shop);
             }
-
-            Console.WriteLine("Полный список товаров");
-            foreach (var item in listShop)
+            using(StreamWriter stream = new StreamWriter(inputFile,false))
             {
-                Console.WriteLine(item.ToString());
-            }
-
-            Console.WriteLine("Акционные товары");
-            foreach (var item in listShop)
-            {
-                if (item.GetSale() > 0)
+                foreach (var item in listShop)
                 {
-                    Console.WriteLine(item.ToString());
+                    stream.WriteLine(item.GetData());
                 }
             }
 
-            listShop.ElementAt(0).SetPrice(250);
-            Console.WriteLine("Изменный полный список товаров");
-            foreach (var item in listShop)
+            using(StreamWriter streamWriter = new StreamWriter(outputFile,false))
             {
-                Console.WriteLine(item.ToString());
-            }
-
-            Console.WriteLine("Поиск по названию,введите название");
-            string findName = Console.ReadLine();
-            foreach(var item in listShop)
-            {
-                if(item.GetName() == findName)
+                streamWriter.WriteLine("Полный список товаров:");
+                foreach(var item in listShop)
                 {
-                    Console.WriteLine(item.ToString());
+                    streamWriter.WriteLine(item.ToString());
                 }
-            }
 
-            Console.WriteLine("Поиск товаров с акцией,введите дату");
-            DateTime data = Convert.ToDateTime(Console.ReadLine());
-            foreach(var item in listShop)
-            {
-                if( (item.GetStartSale()<=data) &&(item.GetEndSale()>=data))
+                streamWriter.WriteLine("Акционные товары:");
+                foreach (var item in listShop)
                 {
-                    Console.WriteLine(item.ToString());
+                    if (item.GetSale() > 0)
+                    {
+                        streamWriter.WriteLine(item.ToString());
+                    }
+                }
+
+                listShop.ElementAt(0).SetPrice(250);
+                streamWriter.WriteLine("Изменный полный список товаров:");
+                foreach (var item in listShop)
+                {
+                    streamWriter.WriteLine(item.ToString());
+                }
+
+                streamWriter.WriteLine("Поиск по названию,введите название:");
+                Console.WriteLine("Введите название товара");
+                string findName = Console.ReadLine();
+                foreach (var item in listShop)
+                {
+                    if (item.GetName() == findName)
+                    {
+                        streamWriter.WriteLine(item.ToString());
+                    }
+                }
+
+                streamWriter.WriteLine("Поиск товаров с акцией,введите дату:");
+                DateTime data = Convert.ToDateTime(Console.ReadLine());
+                int count = 0;
+                foreach (var item in listShop)
+                {
+                    if ((item.GetStartSale() <= data) && (item.GetEndSale() >= data))
+                    {
+                        streamWriter.WriteLine(item.ToString());
+                        count++;
+                    }
+                }
+                if(count==0)
+                {
+                    streamWriter.WriteLine("Таких товаров нет");
                 }
             }
         }

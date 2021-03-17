@@ -22,9 +22,9 @@ namespace ShopBD
             _nameProduct = nameProduct;
             _priceProduct = priceProduct;
             _sale = sale;
-            _incID++;
             _dateTimeSaleStart = dtStart;
             _dateTimeSaleEnd = dtEnd;
+            _incID++;
         }
         
         public override string ToString()
@@ -35,6 +35,10 @@ namespace ShopBD
                    "; sale=" + _sale + 
                    "; discount price=" + (_priceProduct - _priceProduct * (_sale / 100.0))+
                    "; dtStart="+_dateTimeSaleStart+"; dtEnd="+_dateTimeSaleEnd+"]";
+        }
+        public string GetData()
+        {
+            return _nameProduct +" " + _priceProduct + " " + _sale +" " +_dateTimeSaleStart + _dateTimeSaleEnd;
         }
         public void SetNameProduct(string nameProduct)
         {
