@@ -5,3 +5,10 @@ C:\Users\offic\source\repos\PracticeCSharp\PracticeCSharp\bin\Debug\PracticeCSha
 C:\Users\offic\source\repos\PracticeCSharp\PracticeCSharp\bin\Debug\PracticeCSharp.pdb
 C:\Users\offic\source\repos\PracticeCSharp\PracticeCSharp\obj\Debug\PracticeCSharp.exe
 C:\Users\offic\source\repos\PracticeCSharp\PracticeCSharp\obj\Debug\PracticeCSharp.pdb
+I:\git\CSharp\PracticeCSharp\PracticeCSharp\bin\Debug\PracticeCSharp.exe.config
+I:\git\CSharp\PracticeCSharp\PracticeCSharp\bin\Debug\PracticeCSharp.exe
+I:\git\CSharp\PracticeCSharp\PracticeCSharp\bin\Debug\PracticeCSharp.pdb
+I:\git\CSharp\PracticeCSharp\PracticeCSharp\obj\Debug\PracticeCSharp.csprojAssemblyReference.cache
+I:\git\CSharp\PracticeCSharp\PracticeCSharp\obj\Debug\PracticeCSharp.csproj.CoreCompileInputs.cache
+I:\git\CSharp\PracticeCSharp\PracticeCSharp\obj\Debug\PracticeCSharp.exe
+I:\git\CSharp\PracticeCSharp\PracticeCSharp\obj\Debug\PracticeCSharp.pdb

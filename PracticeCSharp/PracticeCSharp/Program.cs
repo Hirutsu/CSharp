@@ -11,23 +11,32 @@ namespace PracticeCSharp
     {
         static void Main(string[] args)
         {
-            string[] words;
-            using (StreamReader streamReader = new StreamReader(@"C:\Users\offic\source\repos\PracticeCSharp\PracticeCSharp\TextFile1.txt", false))
+            int[] mas = { 6, 5, 4, 3, 2,1 };
+            int temp;
+            int elem = 0;
+            for(int i=0;i<mas.Length;i++)
             {
-                string allText = streamReader.ReadToEnd();
-                words = allText.Split();
+                for(int j=0;j<mas.Length-1;j++)
+                {
+                    if(mas[j]>mas[j+1])
+                    {
+                        temp = mas[j+1];
+                        mas[j+1] = mas[j];
+                        mas[j] = temp;
+                    }
+                    elem++;
+                    Console.Write(elem + ")");
+                    for(int index=0;index<mas.Length;index++)
+                    {
+                        Console.Write(mas[index]+" ");
+                    }
+                    Console.WriteLine();
+                }
             }
-            BinaryTree binaryTree = new BinaryTree();
-            for(int index = 0; index < words.Length;index++)
+            for(int i =0;i<mas.Length;i++)
             {
-                binaryTree.Add(Convert.ToInt32(words[index]));
+                Console.WriteLine(mas[i] + " ");
             }
-            //Подсчет суммы через прямой проход
-            Console.WriteLine(binaryTree.SumOddNums());
-            Console.WriteLine(binaryTree.SumEvenNums());
-            Console.WriteLine("Last element(самый глубокий):" + binaryTree.SearchDepthNode(250));
-            Console.WriteLine("Глубина корня:"+ binaryTree.SearchDepthNode(5));
-            Console.WriteLine("Глубина потомка корня:" + binaryTree.SearchDepthNode(-2));
         }
     }
 }
