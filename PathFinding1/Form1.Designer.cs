@@ -219,9 +219,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(95, 224);
+            this.button5.Location = new System.Drawing.Point(6, 259);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(77, 30);
+            this.button5.Size = new System.Drawing.Size(170, 30);
             this.button5.TabIndex = 25;
             this.button5.Text = "Clear Map";
             this.button5.UseVisualStyleBackColor = true;
@@ -798,19 +798,19 @@
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(138, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(138, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // Form1
             // 

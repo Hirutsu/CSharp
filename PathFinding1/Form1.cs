@@ -53,9 +53,9 @@ namespace PathFinding
          
         public Form1()
         {
-            MapWidth = 50;
-            MapHeight = 43;
-            CellSize = 13;
+            MapWidth = 5;
+            MapHeight = 5;
+            CellSize = 15;
             grInfo = new GrInfo[6];
             
             nullCell = new Cell(0, 0); 
@@ -192,11 +192,6 @@ namespace PathFinding
             finish = nullCell;
             grInfo = new GrInfo[6];
         }
-        // Рисует созданную в массиве карту (используется при загрузке карты из файла,
-        // а также при перерисовке карты в случае повторного запуска при выборе другого алгоритма
-        // или после очистки результатов расчётов)
-        // Рисуем стартовую и финишную точки:
-        // Параметр передается в пикселях!
         private void drawStart(Point point)
         {
             if (start == nullCell)

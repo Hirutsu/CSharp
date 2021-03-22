@@ -34,19 +34,25 @@ namespace CountFuncionsProjectByHirutsu
             using (StreamReader streamReader = new StreamReader(nameFile, Encoding.GetEncoding(1251)))
             {
                 string line;
+                string tempLine;
                 while ((line = streamReader.ReadLine()) != null)
                 {
-                    string[] FunctionsArray = line.Split();
-                    for(int index=0;index<FunctionsArray.Length;index++)
+                    tempLine = line;
+                    for(int i=0;i<line.Length;i++)
                     {
-                        if (dictionary.ContainsKey(FunctionsArray[index]))
+                        if(line[i] == '|')
                         {
-                            dictionary[FunctionsArray[index]] += 1;
+                            tempLine = line.Substring(0, i);
+                            break;
                         }
-                        else
-                        {
-                            dictionary.Add(FunctionsArray[index], 1);
-                        }
+                    }
+                    if (dictionary.ContainsKey(tempLine))
+                    {
+                        dictionary[tempLine] += 1;
+                    }
+                    else
+                    {
+                        dictionary.Add(tempLine, 1);
                     }
                 }
             }
