@@ -8,7 +8,7 @@ namespace ShopWInForm
 {
     public class Product
     {
-        static int _incID = 0;
+        public static int _incID = 0;
         private int _id;
         private string _nameProduct;
         private double _priceProduct;

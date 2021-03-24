@@ -51,7 +51,15 @@ namespace ShopWInForm
             this.SaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.возрастаниюToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.убываниюToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.поискПоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NameFindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PriceFindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaleFindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaleDateFindСкидкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.LabInfoDelete = new System.Windows.Forms.Label();
+            this.TextBoxForDelete = new System.Windows.Forms.TextBox();
+            this.ButtonDeleteProd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ShopList)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -126,7 +134,8 @@ namespace ShopWInForm
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.открытьToolStripMenuItem,
             this.обновитьToolStripMenuItem,
-            this.сортироватьПоToolStripMenuItem});
+            this.сортироватьПоToolStripMenuItem,
+            this.поискПоToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(913, 24);
@@ -147,21 +156,21 @@ namespace ShopWInForm
             // 
             this.OpenToolStripMenuItem1.Name = "OpenToolStripMenuItem1";
             this.OpenToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.OpenToolStripMenuItem1.Text = "открыть";
+            this.OpenToolStripMenuItem1.Text = "Открыть";
             this.OpenToolStripMenuItem1.Click += new System.EventHandler(this.OpenToolStripMenuItem1_Click);
             // 
             // добавитьТоварToolStripMenuItem
             // 
             this.добавитьТоварToolStripMenuItem.Name = "добавитьТоварToolStripMenuItem";
             this.добавитьТоварToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.добавитьТоварToolStripMenuItem.Text = "Добавить товар";
+            this.добавитьТоварToolStripMenuItem.Text = "Добавить";
             this.добавитьТоварToolStripMenuItem.Click += new System.EventHandler(this.AddProductToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
             this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.SaveToolStripMenuItem.Text = "сохранить";
+            this.SaveToolStripMenuItem.Text = "Сохранить";
             this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // обновитьToolStripMenuItem
@@ -226,11 +235,80 @@ namespace ShopWInForm
             this.убываниюToolStripMenuItem1.Text = "убыванию";
             this.убываниюToolStripMenuItem1.Click += new System.EventHandler(this.SaleDownToolStripMenuItem1_Click);
             // 
+            // поискПоToolStripMenuItem
+            // 
+            this.поискПоToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NameFindToolStripMenuItem,
+            this.PriceFindToolStripMenuItem,
+            this.SaleFindToolStripMenuItem,
+            this.SaleDateFindСкидкиToolStripMenuItem});
+            this.поискПоToolStripMenuItem.Name = "поискПоToolStripMenuItem";
+            this.поискПоToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.поискПоToolStripMenuItem.Text = "Поиск по:";
+            // 
+            // NameFindToolStripMenuItem
+            // 
+            this.NameFindToolStripMenuItem.Name = "NameFindToolStripMenuItem";
+            this.NameFindToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.NameFindToolStripMenuItem.Text = "Названию";
+            this.NameFindToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
+            // 
+            // PriceFindToolStripMenuItem
+            // 
+            this.PriceFindToolStripMenuItem.Name = "PriceFindToolStripMenuItem";
+            this.PriceFindToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.PriceFindToolStripMenuItem.Text = "Цене";
+            this.PriceFindToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
+            // 
+            // SaleFindToolStripMenuItem
+            // 
+            this.SaleFindToolStripMenuItem.Name = "SaleFindToolStripMenuItem";
+            this.SaleFindToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.SaleFindToolStripMenuItem.Text = "Скидке";
+            this.SaleFindToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
+            // 
+            // SaleDateFindСкидкиToolStripMenuItem
+            // 
+            this.SaleDateFindСкидкиToolStripMenuItem.Name = "SaleDateFindСкидкиToolStripMenuItem";
+            this.SaleDateFindСкидкиToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.SaleDateFindСкидкиToolStripMenuItem.Text = "Проведению скидки";
+            this.SaleDateFindСкидкиToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
+            // 
+            // LabInfoDelete
+            // 
+            this.LabInfoDelete.AutoSize = true;
+            this.LabInfoDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabInfoDelete.Location = new System.Drawing.Point(12, 403);
+            this.LabInfoDelete.Name = "LabInfoDelete";
+            this.LabInfoDelete.Size = new System.Drawing.Size(227, 17);
+            this.LabInfoDelete.TabIndex = 4;
+            this.LabInfoDelete.Text = "Введите id товара для удаления:";
+            // 
+            // TextBoxForDelete
+            // 
+            this.TextBoxForDelete.Location = new System.Drawing.Point(245, 403);
+            this.TextBoxForDelete.Name = "TextBoxForDelete";
+            this.TextBoxForDelete.Size = new System.Drawing.Size(55, 20);
+            this.TextBoxForDelete.TabIndex = 5;
+            // 
+            // ButtonDeleteProd
+            // 
+            this.ButtonDeleteProd.Location = new System.Drawing.Point(316, 403);
+            this.ButtonDeleteProd.Name = "ButtonDeleteProd";
+            this.ButtonDeleteProd.Size = new System.Drawing.Size(95, 20);
+            this.ButtonDeleteProd.TabIndex = 6;
+            this.ButtonDeleteProd.Text = "Удалить товар";
+            this.ButtonDeleteProd.UseVisualStyleBackColor = true;
+            this.ButtonDeleteProd.Click += new System.EventHandler(this.ButtonDeleteProd_Click);
+            // 
             // ShopByHirutsu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 463);
+            this.ClientSize = new System.Drawing.Size(913, 432);
+            this.Controls.Add(this.ButtonDeleteProd);
+            this.Controls.Add(this.TextBoxForDelete);
+            this.Controls.Add(this.LabInfoDelete);
             this.Controls.Add(this.ShopList);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -270,6 +348,14 @@ namespace ShopWInForm
         private System.Windows.Forms.ToolStripMenuItem возрастаниюToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem убываниюToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem добавитьТоварToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem поискПоToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NameFindToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PriceFindToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SaleFindToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SaleDateFindСкидкиToolStripMenuItem;
+        private System.Windows.Forms.Label LabInfoDelete;
+        private System.Windows.Forms.TextBox TextBoxForDelete;
+        private System.Windows.Forms.Button ButtonDeleteProd;
     }
 }
 

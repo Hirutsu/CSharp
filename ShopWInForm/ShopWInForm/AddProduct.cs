@@ -32,10 +32,19 @@ namespace ShopWInForm
             }
             else
             {
-                ShopByHirutsu frm = new ShopByHirutsu();
-                //prod = new Product(NameProductTB.Text,Convert.ToDouble(PriceProductTB.Text),Convert.ToInt32(SaleProductTB.Text),Convert.ToDateTime(SaleStartTB.Text),Convert.ToDateTime(SaleEndTB));
-                prod = new Product(NameProductTB.Text, Convert.ToDouble(PriceProductTB.Text), Convert.ToInt32(SaleProductTB.Text), null, null);
-                frm.AddProc(prod);
+                ShopByHirutsu main = this.Owner as ShopByHirutsu;
+                if (main != null)
+                {
+                    if (Convert.ToInt32(SaleProductTB.Text) != 0)
+                    {
+                        prod = new Product(NameProductTB.Text, Convert.ToDouble(PriceProductTB.Text), Convert.ToInt32(SaleProductTB.Text), Convert.ToDateTime(SaleStartTB.Text), Convert.ToDateTime(SaleEndTB.Text));
+                    }
+                    else
+                    {
+                        prod = new Product(NameProductTB.Text, Convert.ToDouble(PriceProductTB.Text), Convert.ToInt32(SaleProductTB.Text), null, null);
+                    }
+                    main.AddProc(prod);
+                }
             }
             this.Close();
         }

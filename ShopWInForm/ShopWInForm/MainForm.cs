@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlX.XDevAPI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,11 @@ namespace ShopWInForm
 {
     public partial class ShopByHirutsu : Form
     {
-
-        public LinkedList<Product> listShop = new LinkedList<Product>();
+        public Product product = new Product();
+        LinkedList<Product> listShop = new LinkedList<Product>();
+        LinkedList<Product> tempProducts = new LinkedList<Product>();
+        public string FindOpt;
+        public string NameButton;
 
         public ShopByHirutsu()
         {
@@ -22,10 +26,12 @@ namespace ShopWInForm
             ShopList.AllowUserToAddRows = false;
         }
 
+        //Файл - меню
         private void OpenToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             listShop.Clear();
             ShopList.Rows.Clear();
+            Product._incID = 0;
             string nameFile;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -74,7 +80,7 @@ namespace ShopWInForm
                 MessageBox.Show("Ошибка чтения из файла");
             }
         }
-
+        
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -97,9 +103,30 @@ namespace ShopWInForm
             }
         }
 
+        private void AddProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddProduct addProduct = new AddProduct();
+            addProduct.Owner = this;
+            addProduct.ShowDialog();
+        }
+        public void AddProc(Product prod)
+        {
+            listShop.AddLast(prod);
+            MessageBox.Show(prod.ToString());
+            int index = ShopList.Rows.Count;
+            ShopList.Rows.Add();
+            ShopList[0, ShopList.Rows.Count-1].Value = prod.GetId();
+            ShopList[1, ShopList.Rows.Count-1].Value = prod.GetName();
+            ShopList[2, ShopList.Rows.Count-1].Value = prod.GetPrice();
+            ShopList[3, ShopList.Rows.Count-1].Value = prod.GetSale();
+            ShopList[4, ShopList.Rows.Count-1].Value = prod.GetPrice() - prod.GetPrice() * (prod.GetSale() / 100.0);
+            ShopList[5, ShopList.Rows.Count-1].Value = prod.GetStartSale();
+            ShopList[6, ShopList.Rows.Count-1].Value = prod.GetEndSale();
+        }
+
+        //обновить таблицу
         private void UpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(listShop.Count.ToString());
             ShopList.Rows.Clear();
             int index = 0;
             foreach (var item in listShop)
@@ -115,7 +142,8 @@ namespace ShopWInForm
                 index++;
             }
         }
-
+        
+        //Сортировать по
         private void PriceUpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var result = listShop.OrderBy(u => u.GetPrice());
@@ -220,27 +248,162 @@ namespace ShopWInForm
             }
         }
 
-        private void AddProductToolStripMenuItem_Click(object sender, EventArgs e)
+        //Поиск по цене,названию,скидке,проведению скидки
+        private void FindToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddProduct addProduct = new AddProduct();
-            addProduct.Show();
+            NameButton = sender.ToString();
+            FindForm FindProduct = new FindForm();
+            FindProduct.Owner = this;
+            FindProduct.ShowDialog();
+            tempProducts.Clear();
         }
-        public void AddProc(Product prod)
+
+        public void FindProduct()
         {
-            MessageBox.Show(prod.ToString());
-            MessageBox.Show(listShop.Count.ToString());
-            listShop.AddLast(prod);
-            MessageBox.Show(listShop.Count.ToString());
-            ShopList.Rows.Clear();
-            int index = ShopList.Rows.Count;
-            ShopList.Rows.Add();
-            ShopList[0, index].Value = prod.GetId();
-            ShopList[1, index].Value = prod.GetName();
-            ShopList[2, index].Value = prod.GetPrice();
-            ShopList[3, index].Value = prod.GetSale();
-            ShopList[4, index].Value = prod.GetPrice() * (prod.GetSale() / 100.0);
-            ShopList[5, index].Value = prod.GetStartSale();
-            ShopList[6, index].Value = prod.GetEndSale();
+            if(NameButton == "Названию")
+            {
+                foreach(var item in listShop)
+                {
+                    if (item.GetName() == FindOpt)
+                    {
+                        tempProducts.AddLast(item);
+                    }
+                }
+                ShopList.Rows.Clear();
+                int index = 0;
+                foreach (var item in tempProducts)
+                {
+                    ShopList.Rows.Add();
+                    ShopList[0, index].Value = item.GetId();
+                    ShopList[1, index].Value = item.GetName();
+                    ShopList[2, index].Value = item.GetPrice();
+                    ShopList[3, index].Value = item.GetSale();
+                    ShopList[4, index].Value = item.GetPrice() - item.GetPrice() * (item.GetSale() / 100.0);
+                    ShopList[5, index].Value = item.GetStartSale();
+                    ShopList[6, index].Value = item.GetEndSale();
+                    index++;
+                }
+            }
+            else if(NameButton == "Цене")
+            {
+                foreach (var item in listShop)
+                {
+                    if (item.GetPrice() == Convert.ToDouble(FindOpt))
+                    {
+                        tempProducts.AddLast(item);
+                    }
+                }
+                ShopList.Rows.Clear();
+                int index = 0;
+                foreach (var item in tempProducts)
+                {
+                    ShopList.Rows.Add();
+                    ShopList[0, index].Value = item.GetId();
+                    ShopList[1, index].Value = item.GetName();
+                    ShopList[2, index].Value = item.GetPrice();
+                    ShopList[3, index].Value = item.GetSale();
+                    ShopList[4, index].Value = item.GetPrice() - item.GetPrice() * (item.GetSale() / 100.0);
+                    ShopList[5, index].Value = item.GetStartSale();
+                    ShopList[6, index].Value = item.GetEndSale();
+                    index++;
+                }
+            }
+            else if (NameButton == "Скидке")
+            {
+                foreach (var item in listShop)
+                {
+                    if (item.GetSale() == Convert.ToInt32(FindOpt))
+                    {
+                        tempProducts.AddLast(item);
+                    }
+                }
+                ShopList.Rows.Clear();
+                int index = 0;
+                foreach (var item in tempProducts)
+                {
+                    ShopList.Rows.Add();
+                    ShopList[0, index].Value = item.GetId();
+                    ShopList[1, index].Value = item.GetName();
+                    ShopList[2, index].Value = item.GetPrice();
+                    ShopList[3, index].Value = item.GetSale();
+                    ShopList[4, index].Value = item.GetPrice() - item.GetPrice() * (item.GetSale() / 100.0);
+                    ShopList[5, index].Value = item.GetStartSale();
+                    ShopList[6, index].Value = item.GetEndSale();
+                    index++;
+                }
+            }
+            else
+            {
+                foreach (var item in listShop)
+                {
+                    if (item.GetStartSale() <= Convert.ToDateTime(FindOpt) && (item.GetEndSale() >= Convert.ToDateTime(FindOpt)))
+                    {
+                        tempProducts.AddLast(item);
+                    }
+                }
+                ShopList.Rows.Clear();
+                int index = 0;
+                foreach (var item in tempProducts)
+                {
+                    ShopList.Rows.Add();
+                    ShopList[0, index].Value = item.GetId();
+                    ShopList[1, index].Value = item.GetName();
+                    ShopList[2, index].Value = item.GetPrice();
+                    ShopList[3, index].Value = item.GetSale();
+                    ShopList[4, index].Value = item.GetPrice() - item.GetPrice() * (item.GetSale() / 100.0);
+                    ShopList[5, index].Value = item.GetStartSale();
+                    ShopList[6, index].Value = item.GetEndSale();
+                    index++;
+                }
+            }
+            if(tempProducts.Count ==0)
+            {
+                ShopList.Rows.Clear();
+                MessageBox.Show("Таких товаров не найдено");
+            }
+        }
+
+        //меню программы внизу
+        private void ButtonDeleteProd_Click(object sender, EventArgs e)
+        {
+            int size = listShop.Count;
+            if(TextBoxForDelete.Text =="")
+            {
+                MessageBox.Show("Введите id");
+                return;
+            }
+            else
+            {
+                foreach (var item in listShop.ToArray())
+                {
+                    if(item.GetId() == Convert.ToInt32(TextBoxForDelete.Text))
+                    {
+                        listShop.Remove(item);
+                    }
+                }
+                if(size == listShop.Count())
+                {
+                    MessageBox.Show("С таким товаром id не найдено");
+                    return;
+                }
+                else
+                {
+                    ShopList.Rows.Clear();
+                    int index = 0;
+                    foreach (var item in listShop.ToArray())
+                    {
+                        ShopList.Rows.Add();
+                        ShopList[0, index].Value = item.GetId();
+                        ShopList[1, index].Value = item.GetName();
+                        ShopList[2, index].Value = item.GetPrice();
+                        ShopList[3, index].Value = item.GetSale();
+                        ShopList[4, index].Value = item.GetPrice() - item.GetPrice() * (item.GetSale() / 100.0);
+                        ShopList[5, index].Value = item.GetStartSale();
+                        ShopList[6, index].Value = item.GetEndSale();
+                        index++;
+                    }
+                }
+            }
         }
     }
 }
