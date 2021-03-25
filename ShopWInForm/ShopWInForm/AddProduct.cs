@@ -30,6 +30,10 @@ namespace ShopWInForm
             {
                 MessageBox.Show("Введите цену товара");
             }
+            else if(SaleProductTB.Text =="")
+            {
+                MessageBox.Show("Введите скидку товара");
+            }
             else
             {
                 ShopByHirutsu main = this.Owner as ShopByHirutsu;

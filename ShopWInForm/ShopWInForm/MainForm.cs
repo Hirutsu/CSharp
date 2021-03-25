@@ -112,16 +112,28 @@ namespace ShopWInForm
         public void AddProc(Product prod)
         {
             listShop.AddLast(prod);
-            MessageBox.Show(prod.ToString());
             int index = ShopList.Rows.Count;
             ShopList.Rows.Add();
             ShopList[0, ShopList.Rows.Count-1].Value = prod.GetId();
             ShopList[1, ShopList.Rows.Count-1].Value = prod.GetName();
             ShopList[2, ShopList.Rows.Count-1].Value = prod.GetPrice();
             ShopList[3, ShopList.Rows.Count-1].Value = prod.GetSale();
-            ShopList[4, ShopList.Rows.Count-1].Value = prod.GetPrice() - prod.GetPrice() * (prod.GetSale() / 100.0);
-            ShopList[5, ShopList.Rows.Count-1].Value = prod.GetStartSale();
-            ShopList[6, ShopList.Rows.Count-1].Value = prod.GetEndSale();
+            if(prod.GetSale()==0)
+            {
+                ShopList[4, ShopList.Rows.Count-1].Value = prod.GetPrice();
+            }
+            else
+            {
+                ShopList[4, ShopList.Rows.Count - 1].Value = prod.GetPrice() - prod.GetPrice() * (prod.GetSale() / 100.0);
+            }
+            if (prod.GetStartSale().ToString() != "")
+            {
+                ShopList[5, ShopList.Rows.Count-1].Value = prod.GetStartSale();
+            }
+            if(prod.GetEndSale().ToString()!="")
+            {
+                ShopList[6, ShopList.Rows.Count-1].Value = prod.GetEndSale();
+            }
         }
 
         //обновить таблицу
