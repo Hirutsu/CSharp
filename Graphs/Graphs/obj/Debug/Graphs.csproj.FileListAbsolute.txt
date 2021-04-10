@@ -1,0 +1,7 @@
+I:\git\CSharp\Graphs\Graphs\bin\Debug\Graphs.exe.config
+I:\git\CSharp\Graphs\Graphs\bin\Debug\Graphs.exe
+I:\git\CSharp\Graphs\Graphs\bin\Debug\Graphs.pdb
+I:\git\CSharp\Graphs\Graphs\obj\Debug\Graphs.csprojAssemblyReference.cache
+I:\git\CSharp\Graphs\Graphs\obj\Debug\Graphs.csproj.CoreCompileInputs.cache
+I:\git\CSharp\Graphs\Graphs\obj\Debug\Graphs.exe
+I:\git\CSharp\Graphs\Graphs\obj\Debug\Graphs.pdb

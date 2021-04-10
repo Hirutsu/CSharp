@@ -60,6 +60,9 @@ namespace ShopWInForm
             this.LabInfoDelete = new System.Windows.Forms.Label();
             this.TextBoxForDelete = new System.Windows.Forms.TextBox();
             this.ButtonDeleteProd = new System.Windows.Forms.Button();
+            this.папапToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.павпToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.павпавпToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ShopList)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -135,7 +138,8 @@ namespace ShopWInForm
             this.открытьToolStripMenuItem,
             this.обновитьToolStripMenuItem,
             this.сортироватьПоToolStripMenuItem,
-            this.поискПоToolStripMenuItem});
+            this.поискПоToolStripMenuItem,
+            this.папапToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(913, 24);
@@ -195,7 +199,7 @@ namespace ShopWInForm
             this.возрастаниюToolStripMenuItem,
             this.убываниюToolStripMenuItem});
             this.PriceToolStripMenuItem.Name = "PriceToolStripMenuItem";
-            this.PriceToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.PriceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.PriceToolStripMenuItem.Text = "Цене";
             // 
             // возрастаниюToolStripMenuItem
@@ -218,7 +222,7 @@ namespace ShopWInForm
             this.возрастаниюToolStripMenuItem1,
             this.убываниюToolStripMenuItem1});
             this.SaleToolStripMenuItem.Name = "SaleToolStripMenuItem";
-            this.SaleToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.SaleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SaleToolStripMenuItem.Text = "Скидке";
             // 
             // возрастаниюToolStripMenuItem1
@@ -301,6 +305,28 @@ namespace ShopWInForm
             this.ButtonDeleteProd.UseVisualStyleBackColor = true;
             this.ButtonDeleteProd.Click += new System.EventHandler(this.ButtonDeleteProd_Click);
             // 
+            // папапToolStripMenuItem
+            // 
+            this.папапToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.павпToolStripMenuItem,
+            this.павпавпToolStripMenuItem});
+            this.папапToolStripMenuItem.Name = "папапToolStripMenuItem";
+            this.папапToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.папапToolStripMenuItem.Text = "папап";
+            // 
+            // павпToolStripMenuItem
+            // 
+            this.павпToolStripMenuItem.Name = "павпToolStripMenuItem";
+            this.павпToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.павпToolStripMenuItem.Text = "павп";
+            this.павпToolStripMenuItem.Click += new System.EventHandler(this.павпToolStripMenuItem_Click);
+            // 
+            // павпавпToolStripMenuItem
+            // 
+            this.павпавпToolStripMenuItem.Name = "павпавпToolStripMenuItem";
+            this.павпавпToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.павпавпToolStripMenuItem.Text = "павпавп";
+            // 
             // ShopByHirutsu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,6 +382,9 @@ namespace ShopWInForm
         private System.Windows.Forms.Label LabInfoDelete;
         private System.Windows.Forms.TextBox TextBoxForDelete;
         private System.Windows.Forms.Button ButtonDeleteProd;
+        private System.Windows.Forms.ToolStripMenuItem папапToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem павпToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem павпавпToolStripMenuItem;
     }
 }
 

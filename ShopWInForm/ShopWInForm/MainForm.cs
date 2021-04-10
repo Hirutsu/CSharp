@@ -417,5 +417,10 @@ namespace ShopWInForm
                 }
             }
         }
+
+        private void павпToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
