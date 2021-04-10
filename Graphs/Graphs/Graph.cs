@@ -344,5 +344,34 @@ namespace Graphs
             }
             Console.WriteLine();
         }
+        public void FindAllAreAchievable()
+        {
+            //получаем матрицу весов
+            int[,] weightsMatrix = graph.GetArray();
+            int countVertex=0;
+            int count = 0;
+            Console.Write("Вершины,из которых достижимы все вершины граф: ");
+            for(int index=0;index<weightsMatrix.GetLength(0);index++)
+            {
+                for(int jIndex=0;jIndex<weightsMatrix.GetLength(1);jIndex++)
+                {
+                    if (weightsMatrix[index, jIndex] != 0) 
+                    {
+                        count++;
+                    }
+                }
+                if (count == weightsMatrix.GetLength(1))
+                {
+                    Console.Write(index+" ");
+                    countVertex++;
+                }
+                count = 0;
+            }
+            if(countVertex==0)
+            {
+                Console.Write("Таких вершин нет");
+            }
+        }
+
     }
 }

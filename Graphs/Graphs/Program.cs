@@ -15,6 +15,7 @@ namespace Graphs
             Graph graph = new Graph(@"I:\git\CSharp\Graphs\Graphs\input.txt");
             graph.Show();
             graph.FindNeighboringPeaks(0);
+            graph.FindAllAreAchievable();
         }
     }
 }
