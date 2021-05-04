@@ -28,30 +28,35 @@ namespace Graphs
                 set { inf = value; }
             }
         } //конец класса Node
+
         private Node head; //ссылка на вершину стека
+
         public Stack() //конструктор класса, создает пустой стек
         {
             head = null;
         }
+
         public void Push(object nodeInfo) // добавляет элемент в вершину стека
         {
             Node r = new Node(nodeInfo);
             r.Next = head;
             head = r;
         }
+
         public object Pop() //извлекает элемент из вершины стека, если он не пуст
         {
             if (head == null)
         {
                 throw new Exception("Стек пуст");
             }
-else
+            else
             {
                 Node r = head;
                 head = r.Next;
                 return r.Inf;
             }
         }
+
         public bool IsEmpty //определяет пуст или нет стек
         {
             get

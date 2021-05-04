@@ -11,7 +11,7 @@ namespace Graphs
     {
         private class Node //вложенный класс для скрытия данных и алгоритмов
         {
-            private int[,] array; //матрица смежности
+            public int[,] array; //матрица смежности
             public int this[int i, int j] //индексатор для обращения к матрице смежности
             {
                 get
@@ -151,7 +151,6 @@ namespace Graphs
                 else //иначе метод рекурсивно вызывает сам себя для поиска пути
                 { //от вершины а до вершины, предшествующей вершине b
                     WayDijkstr(a, p[b], p, ref items);
-
                 }
             }
             public long[,] Floyd(out int[,] p)
@@ -255,6 +254,12 @@ namespace Graphs
                 Console.WriteLine();
             }
         }
+
+        public int Size()
+        {
+            return graph.Size;
+        }
+
         public void Dfs(int v)
         {
             graph.NovSet();//помечаем все вершины графа как непросмотренные
@@ -268,6 +273,7 @@ namespace Graphs
             graph.Bfs(v); //запускаем алгоритм обхода графа в ширину
             Console.WriteLine();
         }
+
         public void Dijkstr(int v)
         {
             graph.NovSet();//помечаем все вершины графа как непросмотренные
@@ -294,9 +300,16 @@ namespace Graphs
                 Console.WriteLine();
             }
         }
-        public void Floyd()
+
+        public bool Floyd(int size,int index,int Jindex)
         {
+            int count=0;
             int[,] p;
+
+            int tempVer = graph.array[index, Jindex];
+            graph.array[index, Jindex] = 0;
+
+
             long[,] a = graph.Floyd(out p); //запускаем алгоритм Флойда
             int i, j;
             //анализируем полученные данные и выводим их на экран
@@ -310,10 +323,13 @@ namespace Graphs
                         {
                             Console.WriteLine("Пути из вершины {0} в вершину {1} не существует", i, j);
                         }
+                        else if(a[i, j] >= size)
+                        {
+                            Console.WriteLine("Путь из вершины {0} в вершину {1} превышает допустимое значение", i,j);
+                        }
                         else
                         {
-                            Console.Write("Кратчайший путь от вершины {0} до вершины {1}равен { 2}, ", i, j, a[i,j]);
-                       
+                            Console.Write("Кратчайший путь от вершины {0} до вершины {1}равен {2}, ", i, j, a[i,j]);
                             Console.Write(" путь ");
                             Queue items = new Queue();
                             items.Add(i);
@@ -324,11 +340,27 @@ namespace Graphs
                                 Console.Write("{0} ", items.Take());
                             }
                             Console.WriteLine();
+                            count++;
                         }
                     }
                 }
             }
+            graph.array[index, Jindex] = tempVer;
+
+            if (count == graph.Size * (graph.Size - 1))
+            {
+                Console.WriteLine();
+                Console.WriteLine(count + " " + graph.Size * (graph.Size - 1));
+                return true;
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine(count + " " + graph.Size * (graph.Size - 1));
+                return false;
+            }
         }
+
         public void FindNeighboringPeaks(int vertex)
         {
             //получаем матрицу весов
@@ -344,6 +376,7 @@ namespace Graphs
             }
             Console.WriteLine();
         }
+
         public void FindAllAreAchievable()
         {
             //получаем матрицу весов
