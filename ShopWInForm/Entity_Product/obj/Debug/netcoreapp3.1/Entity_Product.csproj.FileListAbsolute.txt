@@ -1,0 +1,8 @@
+I:\git\CSharp\ShopWInForm\Entity_Product\bin\Debug\netcoreapp3.1\Entity_Product.deps.json
+I:\git\CSharp\ShopWInForm\Entity_Product\bin\Debug\netcoreapp3.1\Entity_Product.dll
+I:\git\CSharp\ShopWInForm\Entity_Product\bin\Debug\netcoreapp3.1\Entity_Product.pdb
+I:\git\CSharp\ShopWInForm\Entity_Product\obj\Debug\netcoreapp3.1\Entity_Product.AssemblyInfoInputs.cache
+I:\git\CSharp\ShopWInForm\Entity_Product\obj\Debug\netcoreapp3.1\Entity_Product.AssemblyInfo.cs
+I:\git\CSharp\ShopWInForm\Entity_Product\obj\Debug\netcoreapp3.1\Entity_Product.csproj.CoreCompileInputs.cache
+I:\git\CSharp\ShopWInForm\Entity_Product\obj\Debug\netcoreapp3.1\Entity_Product.dll
+I:\git\CSharp\ShopWInForm\Entity_Product\obj\Debug\netcoreapp3.1\Entity_Product.pdb

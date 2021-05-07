@@ -1,0 +1,9 @@
+I:\git\CSharp\ShopWInForm\Product_BLL\bin\Debug\netcoreapp3.1\Product_BLL.deps.json
+I:\git\CSharp\ShopWInForm\Product_BLL\bin\Debug\netcoreapp3.1\Product_BLL.dll
+I:\git\CSharp\ShopWInForm\Product_BLL\bin\Debug\netcoreapp3.1\Product_BLL.pdb
+I:\git\CSharp\ShopWInForm\Product_BLL\obj\Debug\netcoreapp3.1\Product_BLL.csprojAssemblyReference.cache
+I:\git\CSharp\ShopWInForm\Product_BLL\obj\Debug\netcoreapp3.1\Product_BLL.AssemblyInfoInputs.cache
+I:\git\CSharp\ShopWInForm\Product_BLL\obj\Debug\netcoreapp3.1\Product_BLL.AssemblyInfo.cs
+I:\git\CSharp\ShopWInForm\Product_BLL\obj\Debug\netcoreapp3.1\Product_BLL.csproj.CoreCompileInputs.cache
+I:\git\CSharp\ShopWInForm\Product_BLL\obj\Debug\netcoreapp3.1\Product_BLL.dll
+I:\git\CSharp\ShopWInForm\Product_BLL\obj\Debug\netcoreapp3.1\Product_BLL.pdb

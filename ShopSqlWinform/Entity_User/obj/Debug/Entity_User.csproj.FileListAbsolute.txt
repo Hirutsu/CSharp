@@ -1,0 +1,16 @@
+C:\Users\ismai\source\repos\UserPractic\Entity_User\bin\Debug\Entity_User.dll
+C:\Users\ismai\source\repos\UserPractic\Entity_User\bin\Debug\Entity_User.pdb
+C:\Users\ismai\source\repos\UserPractic\Entity_User\obj\Debug\Entity_User.csprojAssemblyReference.cache
+C:\Users\ismai\source\repos\UserPractic\Entity_User\obj\Debug\Entity_User.Properties.Resources.resources
+C:\Users\ismai\source\repos\UserPractic\Entity_User\obj\Debug\Entity_User.csproj.GenerateResource.cache
+C:\Users\ismai\source\repos\UserPractic\Entity_User\obj\Debug\Entity_User.csproj.CoreCompileInputs.cache
+C:\Users\ismai\source\repos\UserPractic\Entity_User\obj\Debug\Entity_User.dll
+C:\Users\ismai\source\repos\UserPractic\Entity_User\obj\Debug\Entity_User.pdb
+C:\Users\offic\Downloads\Entity_User\bin\Debug\Entity_User.dll
+C:\Users\offic\Downloads\Entity_User\bin\Debug\Entity_User.pdb
+C:\Users\offic\Downloads\Entity_User\obj\Debug\Entity_User.csprojAssemblyReference.cache
+C:\Users\offic\Downloads\Entity_User\obj\Debug\Entity_User.Properties.Resources.resources
+C:\Users\offic\Downloads\Entity_User\obj\Debug\Entity_User.csproj.GenerateResource.cache
+C:\Users\offic\Downloads\Entity_User\obj\Debug\Entity_User.csproj.CoreCompileInputs.cache
+C:\Users\offic\Downloads\Entity_User\obj\Debug\Entity_User.dll
+C:\Users\offic\Downloads\Entity_User\obj\Debug\Entity_User.pdb

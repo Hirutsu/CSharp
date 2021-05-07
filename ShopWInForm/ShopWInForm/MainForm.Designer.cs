@@ -161,28 +161,24 @@ namespace ShopWInForm
             this.OpenToolStripMenuItem1.Name = "OpenToolStripMenuItem1";
             this.OpenToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.OpenToolStripMenuItem1.Text = "Открыть";
-            this.OpenToolStripMenuItem1.Click += new System.EventHandler(this.OpenToolStripMenuItem1_Click);
             // 
             // добавитьТоварToolStripMenuItem
             // 
             this.добавитьТоварToolStripMenuItem.Name = "добавитьТоварToolStripMenuItem";
             this.добавитьТоварToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.добавитьТоварToolStripMenuItem.Text = "Добавить";
-            this.добавитьТоварToolStripMenuItem.Click += new System.EventHandler(this.AddProductToolStripMenuItem_Click);
             // 
             // SaveToolStripMenuItem
             // 
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
             this.SaveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.SaveToolStripMenuItem.Text = "Сохранить";
-            this.SaveToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // обновитьToolStripMenuItem
             // 
             this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
             this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.обновитьToolStripMenuItem.Text = "Обновить";
-            this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.UpdateToolStripMenuItem_Click);
             // 
             // сортироватьПоToolStripMenuItem
             // 
@@ -207,14 +203,12 @@ namespace ShopWInForm
             this.возрастаниюToolStripMenuItem.Name = "возрастаниюToolStripMenuItem";
             this.возрастаниюToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.возрастаниюToolStripMenuItem.Text = "возрастанию";
-            this.возрастаниюToolStripMenuItem.Click += new System.EventHandler(this.PriceUpToolStripMenuItem_Click);
             // 
             // убываниюToolStripMenuItem
             // 
             this.убываниюToolStripMenuItem.Name = "убываниюToolStripMenuItem";
             this.убываниюToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.убываниюToolStripMenuItem.Text = "убыванию";
-            this.убываниюToolStripMenuItem.Click += new System.EventHandler(this.PriceDownToolStripMenuItem_Click);
             // 
             // SaleToolStripMenuItem
             // 
@@ -230,14 +224,12 @@ namespace ShopWInForm
             this.возрастаниюToolStripMenuItem1.Name = "возрастаниюToolStripMenuItem1";
             this.возрастаниюToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
             this.возрастаниюToolStripMenuItem1.Text = "возрастанию";
-            this.возрастаниюToolStripMenuItem1.Click += new System.EventHandler(this.SaleUpToolStripMenuItem1_Click);
             // 
             // убываниюToolStripMenuItem1
             // 
             this.убываниюToolStripMenuItem1.Name = "убываниюToolStripMenuItem1";
             this.убываниюToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
             this.убываниюToolStripMenuItem1.Text = "убыванию";
-            this.убываниюToolStripMenuItem1.Click += new System.EventHandler(this.SaleDownToolStripMenuItem1_Click);
             // 
             // поискПоToolStripMenuItem
             // 
@@ -255,28 +247,24 @@ namespace ShopWInForm
             this.NameFindToolStripMenuItem.Name = "NameFindToolStripMenuItem";
             this.NameFindToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.NameFindToolStripMenuItem.Text = "Названию";
-            this.NameFindToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
             // 
             // PriceFindToolStripMenuItem
             // 
             this.PriceFindToolStripMenuItem.Name = "PriceFindToolStripMenuItem";
             this.PriceFindToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.PriceFindToolStripMenuItem.Text = "Цене";
-            this.PriceFindToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
             // 
             // SaleFindToolStripMenuItem
             // 
             this.SaleFindToolStripMenuItem.Name = "SaleFindToolStripMenuItem";
             this.SaleFindToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.SaleFindToolStripMenuItem.Text = "Скидке";
-            this.SaleFindToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
             // 
             // SaleDateFindСкидкиToolStripMenuItem
             // 
             this.SaleDateFindСкидкиToolStripMenuItem.Name = "SaleDateFindСкидкиToolStripMenuItem";
             this.SaleDateFindСкидкиToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.SaleDateFindСкидкиToolStripMenuItem.Text = "Проведению скидки";
-            this.SaleDateFindСкидкиToolStripMenuItem.Click += new System.EventHandler(this.FindToolStripMenuItem_Click);
             // 
             // LabInfoDelete
             // 
@@ -303,7 +291,6 @@ namespace ShopWInForm
             this.ButtonDeleteProd.TabIndex = 6;
             this.ButtonDeleteProd.Text = "Удалить товар";
             this.ButtonDeleteProd.UseVisualStyleBackColor = true;
-            this.ButtonDeleteProd.Click += new System.EventHandler(this.ButtonDeleteProd_Click);
             // 
             // папапToolStripMenuItem
             // 
@@ -319,7 +306,6 @@ namespace ShopWInForm
             this.павпToolStripMenuItem.Name = "павпToolStripMenuItem";
             this.павпToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.павпToolStripMenuItem.Text = "павп";
-            this.павпToolStripMenuItem.Click += new System.EventHandler(this.павпToolStripMenuItem_Click);
             // 
             // павпавпToolStripMenuItem
             // 

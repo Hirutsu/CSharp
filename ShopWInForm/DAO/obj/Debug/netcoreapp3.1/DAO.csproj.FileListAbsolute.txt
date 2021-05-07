@@ -1,0 +1,9 @@
+I:\git\CSharp\ShopWInForm\DAO\bin\Debug\netcoreapp3.1\DAO.deps.json
+I:\git\CSharp\ShopWInForm\DAO\bin\Debug\netcoreapp3.1\DAO.dll
+I:\git\CSharp\ShopWInForm\DAO\bin\Debug\netcoreapp3.1\DAO.pdb
+I:\git\CSharp\ShopWInForm\DAO\obj\Debug\netcoreapp3.1\DAO.csprojAssemblyReference.cache
+I:\git\CSharp\ShopWInForm\DAO\obj\Debug\netcoreapp3.1\DAO.AssemblyInfoInputs.cache
+I:\git\CSharp\ShopWInForm\DAO\obj\Debug\netcoreapp3.1\DAO.AssemblyInfo.cs
+I:\git\CSharp\ShopWInForm\DAO\obj\Debug\netcoreapp3.1\DAO.csproj.CoreCompileInputs.cache
+I:\git\CSharp\ShopWInForm\DAO\obj\Debug\netcoreapp3.1\DAO.dll
+I:\git\CSharp\ShopWInForm\DAO\obj\Debug\netcoreapp3.1\DAO.pdb

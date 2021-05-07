@@ -48,7 +48,6 @@ namespace ShopWInForm
             this.Поиск.TabIndex = 1;
             this.Поиск.Text = "Поиск";
             this.Поиск.UseVisualStyleBackColor = true;
-            this.Поиск.Click += new System.EventHandler(this.Поиск_Click);
             // 
             // FindForm
             // 

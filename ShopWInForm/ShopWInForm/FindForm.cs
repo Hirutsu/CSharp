@@ -16,23 +16,5 @@ namespace ShopWInForm
         {
             InitializeComponent();
         }
-
-        private void Поиск_Click(object sender, EventArgs e)
-        {
-            if(TextBoxFind.Text != "")
-            {
-                ShopByHirutsu main = this.Owner as ShopByHirutsu;
-                if (main != null)
-                {
-                    main.FindOpt = TextBoxFind.Text;
-                    main.FindProduct();
-                }
-            }
-            else 
-            {
-                MessageBox.Show("Введите данные");
-            }
-            this.Close();
-        }
     }
 }

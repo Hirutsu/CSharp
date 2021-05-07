@@ -135,7 +135,6 @@ namespace ShopWInForm
             this.ButtonAddProduct.TabIndex = 10;
             this.ButtonAddProduct.Text = "Добавить товар";
             this.ButtonAddProduct.UseVisualStyleBackColor = true;
-            this.ButtonAddProduct.Click += new System.EventHandler(this.button1_Click);
             // 
             // AddProduct
             // 
