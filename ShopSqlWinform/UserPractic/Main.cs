@@ -34,13 +34,20 @@ namespace UserPractic
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DeleteUser f = new DeleteUser();
+            DeleteProduct f = new DeleteProduct();
             f.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Update f = new Update();
+            UpdateProduct f = new UpdateProduct();
+            f.Show();
+        }
+
+        private void FindProducts(object sender, EventArgs e)
+        {
+            string str = sender.ToString();
+            FindProducts f = new FindProducts(str);
             f.Show();
         }
     }

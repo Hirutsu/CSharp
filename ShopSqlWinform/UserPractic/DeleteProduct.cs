@@ -13,10 +13,10 @@ using System.Windows.Forms;
 
 namespace UserPractic
 {
-    public partial class DeleteUser : Form
+    public partial class DeleteProduct : Form
     {
         private BL_User_Interface _productPL = new BL_User();
-        public DeleteUser()
+        public DeleteProduct()
         {
             InitializeComponent();
             comboBox1.DataSource = _productPL.GetAll();
@@ -25,7 +25,7 @@ namespace UserPractic
         private void button1_Click(object sender, EventArgs e)
         {
             Product user = (Product)comboBox1.SelectedItem;
-            _productPL.Remove(user.ID);
+            _productPL.DeleteProduct(user.ID);
             Close();
         }
     }

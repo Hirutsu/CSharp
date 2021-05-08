@@ -1,6 +1,6 @@
 ﻿namespace UserPractic
 {
-    partial class DeleteUser
+    partial class DeleteProduct
     {
         /// <summary>
         /// Required designer variable.

@@ -20,3 +20,14 @@ C:\Users\offic\Downloads\DAO_Interface\obj\Debug\DAO_Interface.csproj.CoreCompil
 C:\Users\offic\Downloads\DAO_Interface\obj\Debug\DAO_Interface.csproj.CopyComplete
 C:\Users\offic\Downloads\DAO_Interface\obj\Debug\DAO_Interface.dll
 C:\Users\offic\Downloads\DAO_Interface\obj\Debug\DAO_Interface.pdb
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\bin\Debug\DAO_Interface.dll
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\bin\Debug\DAO_Interface.pdb
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\bin\Debug\Entity_User.dll
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\bin\Debug\Entity_User.pdb
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\obj\Debug\DAO_Interface.csprojAssemblyReference.cache
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\obj\Debug\DAO_Interface.Properties.Resources.resources
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\obj\Debug\DAO_Interface.csproj.GenerateResource.cache
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\obj\Debug\DAO_Interface.csproj.CoreCompileInputs.cache
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\obj\Debug\DAO_Interface.csproj.CopyComplete
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\obj\Debug\DAO_Interface.dll
+I:\git\CSharp\ShopSqlWinform\DAO_Interface\obj\Debug\DAO_Interface.pdb

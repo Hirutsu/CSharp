@@ -65,17 +65,15 @@ namespace DAO
             return products;
         }
 
-        public void Remove(int id)
+        public void DeleteProduct(int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 var cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "RemoveProduct";
+                cmd.CommandText = "DeleteProduct";
                 cmd.Parameters.AddWithValue(@"id", id);
                 connection.Open();
-
-               
                 cmd.ExecuteNonQuery();
             }
            
@@ -115,7 +113,7 @@ namespace DAO
             {
                 var cmd = connection.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "UpdateUser";
+                cmd.CommandText = "UpdateProduct";
                 cmd.Parameters.AddWithValue(@"id", id);
                 cmd.Parameters.AddWithValue(@"name", Name);
                 cmd.Parameters.AddWithValue(@"price", Price);
@@ -126,6 +124,114 @@ namespace DAO
 
                 cmd.ExecuteNonQuery();
             }
+        }
+        public IEnumerable<Product> SearchByName(string Name)
+        {
+            List<Product> products = new List<Product>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SearchByName";
+                cmd.Parameters.AddWithValue(@"name", Name);
+                connection.Open();
+
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    products.Add(new Product
+                    {
+                        ID = (int)reader["id"],
+                        Name = (string)reader["name"],
+                        Price = (double)reader["price"],
+                        Sale = (int)reader["sale"],
+                        StartSale = (DateTime)reader["saleStart"],
+                        EndSale = (DateTime)reader["saleEnd"]
+                    });
+                }
+            }
+            return products;
+        }
+        public IEnumerable<Product> SearchByPrice(double Price)
+        {
+            List<Product> products = new List<Product>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SearchByPrice";
+                cmd.Parameters.AddWithValue(@"price", Price);
+                connection.Open();
+
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    products.Add(new Product
+                    {
+                        ID = (int)reader["id"],
+                        Name = (string)reader["name"],
+                        Price = (double)reader["price"],
+                        Sale = (int)reader["sale"],
+                        StartSale = (DateTime)reader["saleStart"],
+                        EndSale = (DateTime)reader["saleEnd"]
+                    });
+                }
+            }
+            return products;
+        }
+        public IEnumerable<Product> SearchBySale(int Sale)
+        {
+            List<Product> products = new List<Product>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SearchBySale";
+                cmd.Parameters.AddWithValue(@"sale", Sale);
+                connection.Open();
+
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    products.Add(new Product
+                    {
+                        ID = (int)reader["id"],
+                        Name = (string)reader["name"],
+                        Price = (double)reader["price"],
+                        Sale = (int)reader["sale"],
+                        StartSale = (DateTime)reader["saleStart"],
+                        EndSale = (DateTime)reader["saleEnd"]
+                    });
+                }
+            }
+            return products;
+        }
+        public IEnumerable<Product> SearchByDateSale(DateTime dateSale)
+        {
+            List<Product> products = new List<Product>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SearchByDateSale";
+                cmd.Parameters.AddWithValue(@"dateSale", dateSale);
+                connection.Open();
+
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    products.Add(new Product
+                    {
+                        ID = (int)reader["id"],
+                        Name = (string)reader["name"],
+                        Price = (double)reader["price"],
+                        Sale = (int)reader["sale"],
+                        StartSale = (DateTime)reader["saleStart"],
+                        EndSale = (DateTime)reader["saleEnd"]
+                    });
+                }
+            }
+            return products;
         }
     }
 }

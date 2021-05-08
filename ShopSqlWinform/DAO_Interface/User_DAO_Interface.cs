@@ -13,6 +13,10 @@ namespace DAO_Interface
         IEnumerable<Product> GetAll();
         Product GetInfoProduct(int id);
         void UpdateProduct(int id, string Name, double Price, int Sale, DateTime? StartSale,DateTime? EndSale);
-        void Remove(int id);
+        void DeleteProduct(int id);
+        IEnumerable<Product> SearchByName(string name);
+        IEnumerable<Product> SearchByPrice(double price);
+        IEnumerable<Product> SearchBySale(int sale);
+        IEnumerable<Product> SearchByDateSale(DateTime DateSale);
     }
 }

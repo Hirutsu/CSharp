@@ -20,3 +20,14 @@ C:\Users\offic\Downloads\BL_Interface\obj\Debug\BL_Interface.csproj.CoreCompileI
 C:\Users\offic\Downloads\BL_Interface\obj\Debug\BL_Interface.csproj.CopyComplete
 C:\Users\offic\Downloads\BL_Interface\obj\Debug\BL_Interface.dll
 C:\Users\offic\Downloads\BL_Interface\obj\Debug\BL_Interface.pdb
+I:\git\CSharp\ShopSqlWinform\BL_Interface\bin\Debug\BL_Interface.dll
+I:\git\CSharp\ShopSqlWinform\BL_Interface\bin\Debug\BL_Interface.pdb
+I:\git\CSharp\ShopSqlWinform\BL_Interface\bin\Debug\Entity_User.dll
+I:\git\CSharp\ShopSqlWinform\BL_Interface\bin\Debug\Entity_User.pdb
+I:\git\CSharp\ShopSqlWinform\BL_Interface\obj\Debug\BL_Interface.csprojAssemblyReference.cache
+I:\git\CSharp\ShopSqlWinform\BL_Interface\obj\Debug\BL_Interface.Properties.Resources.resources
+I:\git\CSharp\ShopSqlWinform\BL_Interface\obj\Debug\BL_Interface.csproj.GenerateResource.cache
+I:\git\CSharp\ShopSqlWinform\BL_Interface\obj\Debug\BL_Interface.csproj.CoreCompileInputs.cache
+I:\git\CSharp\ShopSqlWinform\BL_Interface\obj\Debug\BL_Interface.csproj.CopyComplete
+I:\git\CSharp\ShopSqlWinform\BL_Interface\obj\Debug\BL_Interface.dll
+I:\git\CSharp\ShopSqlWinform\BL_Interface\obj\Debug\BL_Interface.pdb
