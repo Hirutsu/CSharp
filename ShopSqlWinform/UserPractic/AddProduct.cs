@@ -34,11 +34,6 @@ namespace UserPractic
                 errorProvider1.SetError(button1, "Дата проведения акции неверно выставлена");
                 return;
             }
-            if(int.Parse(TB_Sale.Text)>100 || int.Parse(TB_Sale.Text)<0)
-            {
-                errorProvider1.SetError(button1, "Скидка должна быть от 0 до 100%");
-                return;
-            }
             if (!float.TryParse(TB_Price.Text,out _))
             {
                 errorProvider1.SetError(button1, "Цена введена неправильно");
@@ -47,6 +42,11 @@ namespace UserPractic
             if (!float.TryParse(TB_Sale.Text, out _))
             {
                 errorProvider1.SetError(button1, "Скидка введена неправильно");
+                return;
+            }
+            if (int.Parse(TB_Sale.Text) > 100 || int.Parse(TB_Sale.Text) < 0)
+            {
+                errorProvider1.SetError(button1, "Скидка должна быть от 0 до 100%");
                 return;
             }
             if (float.Parse(TB_Price.Text)<0)
