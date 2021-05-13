@@ -14,7 +14,7 @@ namespace UserPractic
 {
     public partial class Main : Form
     {
-        private BL_User_Interface _userPL = new BL_User();
+        private BL_Product_Interface _userPL = new BL_Product();
         public Main()
         {
             InitializeComponent();
@@ -49,6 +49,10 @@ namespace UserPractic
             string str = sender.ToString();
             FindProducts f = new FindProducts(str);
             f.Show();
+        }
+        private void DeleteAll(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = _userPL.DeleteAll();
         }
     }
 }

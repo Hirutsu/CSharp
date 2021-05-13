@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace BL
 {
-    public class BL_User : BL_User_Interface
+    public class BL_Product : BL_Product_Interface
     {
-        private User_DAO_Interface _productDao = new User_DAO();
-        public BL_User()
+        private Product_DAO_Interface _productDao = new Product_DAO();
+        public BL_Product()
         {
-            this._productDao = new User_DAO();
+            this._productDao = new Product_DAO();
         }
         public void Add(Product value)
         {
@@ -25,13 +25,13 @@ namespace BL
         {
             return _productDao.GetAll();
         }
+        public IEnumerable<Product> DeleteAll()
+        {
+            return _productDao.DeleteAll();
+        }
         public void DeleteProduct(int id)
         {
             _productDao.DeleteProduct(id);
-        }
-        public Product GetInfoProduct(int id)
-        {
-            return _productDao.GetInfoProduct(id);
         }
         public void UpdateProduct(int id, string name, double price, int sale, DateTime saleStart,DateTime saleEnd)
         {

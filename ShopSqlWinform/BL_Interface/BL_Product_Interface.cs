@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace BL_Interface
 {
-    public interface BL_User_Interface
+    public interface BL_Product_Interface
     {
         void Add(Product product);
         IEnumerable<Product> GetAll();
-        Product GetInfoProduct(int id);
+        IEnumerable<Product> DeleteAll();
         void UpdateProduct(int id, string Name, double Price, int Sale, DateTime StartSale, DateTime EndSale);
         void DeleteProduct(int id);
         IEnumerable<Product> SearchByName(string text);

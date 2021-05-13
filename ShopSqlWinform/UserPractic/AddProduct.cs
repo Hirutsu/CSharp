@@ -15,7 +15,7 @@ namespace UserPractic
 {
     public partial class AddProduct : Form
     {
-        private BL_User_Interface _userPL = new BL_User();
+        private BL_Product_Interface _userPL = new BL_Product();
         public AddProduct()
         {
             InitializeComponent();
@@ -24,13 +24,39 @@ namespace UserPractic
         private void button1_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
-            if(String.IsNullOrWhiteSpace(TB_Price.Text)|| String.IsNullOrWhiteSpace(TB_Name.Text)|| String.IsNullOrWhiteSpace(TB_Sale.Text))
+            if(String.IsNullOrWhiteSpace(TB_Price.Text)|| String.IsNullOrWhiteSpace(TB_Name.Text)|| String.IsNullOrWhiteSpace(TB_Sale.Text)||string.IsNullOrWhiteSpace(DTP_StartSale.Value.ToString()) || string.IsNullOrWhiteSpace(DTP_StartSale.Value.ToString()))
             {
-                errorProvider1.SetError(button1, "Fill in all the fields");
+                errorProvider1.SetError(button1, "Введите все поля");
+                return;
+            }
+            if(DTP_StartSale.Value>DTP_EndSale.Value)
+            {
+                errorProvider1.SetError(button1, "Дата проведения акции неверно выставлена");
+                return;
+            }
+            if(int.Parse(TB_Sale.Text)>100 || int.Parse(TB_Sale.Text)<0)
+            {
+                errorProvider1.SetError(button1, "Скидка должна быть от 0 до 100%");
+                return;
+            }
+            if (!float.TryParse(TB_Price.Text,out _))
+            {
+                errorProvider1.SetError(button1, "Цена введена неправильно");
+                return;
+            }
+            if (!float.TryParse(TB_Sale.Text, out _))
+            {
+                errorProvider1.SetError(button1, "Скидка введена неправильно");
+                return;
+            }
+            if (float.Parse(TB_Price.Text)<0)
+            {
+                errorProvider1.SetError(button1, "Цена должна быть неотрицательной");
+                return;
             }
             else
             {
-                var user = new Product(TB_Name.Text, float.Parse(TB_Price.Text), int.Parse(TB_Sale.Text), DTP_StartSale.Value,DTP_EndSale.Value);
+                Product user = new Product(TB_Name.Text, float.Parse(TB_Price.Text), int.Parse(TB_Sale.Text), DTP_StartSale.Value,DTP_EndSale.Value);
                 _userPL.Add(user);
                 Close();
             }

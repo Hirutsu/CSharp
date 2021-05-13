@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{947A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL_Interface", "BL_Interface\BL_Interface.csproj", "{32AF7654-F1A1-4DBC-A71B-5817D14FF5E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity_User", "Entity_User\Entity_User.csproj", "{46361784-9708-42D9-BE76-79FBF87C0A4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity_Product", "Entity_User\Entity_Product.csproj", "{46361784-9708-42D9-BE76-79FBF87C0A4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

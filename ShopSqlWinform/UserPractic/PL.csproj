@@ -124,9 +124,9 @@
       <Project>{32af7654-f1a1-4dbc-a71b-5817d14ff5e1}</Project>
       <Name>BL_Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entity_User\Entity_User.csproj">
+    <ProjectReference Include="..\Entity_User\Entity_Product.csproj">
       <Project>{46361784-9708-42d9-be76-79fbf87c0a4a}</Project>
-      <Name>Entity_User</Name>
+      <Name>Entity_Product</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,7 +11,7 @@ using DAO_Interface;
 
 namespace DAO
 {
-    public class User_DAO : User_DAO_Interface
+    public class Product_DAO : Product_DAO_Interface
     {
         private string _connectionString = ConfigurationManager.ConnectionStrings["Connect"].ConnectionString;
         public void Add(Product value)
@@ -65,6 +65,33 @@ namespace DAO
             return products;
         }
 
+        public IEnumerable<Product> DeleteAll()
+        {
+            List<Product> products = new List<Product>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var cmd = connection.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "DeleteAll";
+                connection.Open();
+
+                var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    products.Add(new Product
+                    {
+                        ID = (int)reader["id"],
+                        Name = (string)reader["name"],
+                        Price = (double)reader["price"],
+                        Sale = (int)reader["sale"],
+                        StartSale = (DateTime)reader["saleStart"],
+                        EndSale = (DateTime)reader["saleEnd"]
+                    });
+                }
+            }
+            return products;
+        }
+
         public void DeleteProduct(int id)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -77,34 +104,6 @@ namespace DAO
                 cmd.ExecuteNonQuery();
             }
            
-        }
-
-        public Product GetInfoProduct(int id)
-        {
-            Product product = new Product();
-            using (var connection = new SqlConnection(_connectionString))
-            {
-                var cmd = connection.CreateCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "GetINFO_Product";
-                cmd.Parameters.AddWithValue(@"id", id);
-                connection.Open();
-
-                var reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    product = (new Product
-                    {
-                        ID = (int)reader["id"],
-                        Name = (string)reader["name"],
-                        Price = (double)reader["price"],
-                        Sale = (int)reader["sale"],
-                        StartSale = (DateTime)reader["saleEnd"],
-                        EndSale = (DateTime)reader["saleEnd"]
-                    });
-                }
-            }
-            return product;
         }
         public void UpdateProduct(int id, string Name, double Price, int Sale, DateTime? StartSale,DateTime? EndSale)
         {
@@ -149,6 +148,10 @@ namespace DAO
                         EndSale = (DateTime)reader["saleEnd"]
                     });
                 }
+                if(products.Count==0)
+                {
+                    MessageBox.Show("Данных товаров не найдено");
+                }
             }
             return products;
         }
@@ -175,6 +178,10 @@ namespace DAO
                         StartSale = (DateTime)reader["saleStart"],
                         EndSale = (DateTime)reader["saleEnd"]
                     });
+                }
+                if (products.Count == 0)
+                {
+                    MessageBox.Show("Данных товаров не найдено");
                 }
             }
             return products;
@@ -203,6 +210,10 @@ namespace DAO
                         EndSale = (DateTime)reader["saleEnd"]
                     });
                 }
+                if (products.Count == 0)
+                {
+                    MessageBox.Show("Данных товаров не найдено");
+                }
             }
             return products;
         }
@@ -229,6 +240,10 @@ namespace DAO
                         StartSale = (DateTime)reader["saleStart"],
                         EndSale = (DateTime)reader["saleEnd"]
                     });
+                }
+                if (products.Count == 0)
+                {
+                    MessageBox.Show("Данных товаров не найдено");
                 }
             }
             return products;

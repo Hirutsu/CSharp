@@ -14,7 +14,7 @@ namespace UserPractic
 {
     public partial class FindProducts : Form
     {
-        private BL_User_Interface _userPL = new BL_User();
+        private BL_Product_Interface _userPL = new BL_Product();
 
         public FindProducts(string str)
         {
@@ -30,17 +30,36 @@ namespace UserPractic
             }
             if (label2.Text == "Цену")
             {
-                dataGridView1.DataSource = _userPL.SearchByPrice(double.Parse(textBox1.Text));
+                try
+                {
+                    dataGridView1.DataSource = _userPL.SearchByPrice(double.Parse(textBox1.Text));
+                }
+                catch
+                {
+                    errorProvider1.SetError(button1, "Введите нормальную цену");
+                }
             }
             if (label2.Text == "Скидку")
             {
-                dataGridView1.DataSource = _userPL.SearchBySale(int.Parse(textBox1.Text));
-                //_userPL.Add(user);
+                try
+                {
+                    dataGridView1.DataSource = _userPL.SearchBySale(int.Parse(textBox1.Text));
+                }
+                catch
+                {
+                    errorProvider1.SetError(button1, "Введите нормальную скидку");
+                }
             }
             if (label2.Text == "Дату проведения")
             {
-                dataGridView1.DataSource = _userPL.SearchByDateSale(DateTime.Parse(textBox1.Text));
-                //_userPL.Add(user);
+                try
+                {
+                    dataGridView1.DataSource = _userPL.SearchByDateSale(DateTime.Parse(textBox1.Text));
+                }
+                catch
+                {
+                    errorProvider1.SetError(button1, "Введите нормальную дату");
+                }
             }
         }
     }

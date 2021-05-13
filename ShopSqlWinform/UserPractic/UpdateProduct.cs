@@ -15,7 +15,7 @@ namespace UserPractic
 {
     public partial class UpdateProduct : Form
     {
-        private BL_User_Interface _userPL = new BL_User();
+        private BL_Product_Interface _userPL = new BL_Product();
         private int _id = 0;
 
         public UpdateProduct()
@@ -30,6 +30,17 @@ namespace UserPractic
             if (String.IsNullOrWhiteSpace(TB_Price.Text) || String.IsNullOrWhiteSpace(TB_Name.Text) || String.IsNullOrWhiteSpace(TB_Sale.Text))
             {
                 errorProvider1.SetError(button1, "Fill in all the fields");
+                return;
+            }
+            if (!float.TryParse(TB_Price.Text, out _))
+            {
+                errorProvider1.SetError(button1, "Цена введена неправильно");
+                return;
+            }
+            if (!float.TryParse(TB_Sale.Text, out _))
+            {
+                errorProvider1.SetError(button1, "Скидка введена неправильно");
+                return;
             }
             else
             {

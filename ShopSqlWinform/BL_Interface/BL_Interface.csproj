@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BL_User_Interface.cs" />
+    <Compile Include="BL_Product_Interface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -71,9 +71,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entity_User\Entity_User.csproj">
+    <ProjectReference Include="..\Entity_User\Entity_Product.csproj">
       <Project>{46361784-9708-42D9-BE76-79FBF87C0A4A}</Project>
-      <Name>Entity_User</Name>
+      <Name>Entity_Product</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

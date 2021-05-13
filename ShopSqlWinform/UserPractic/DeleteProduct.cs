@@ -15,7 +15,7 @@ namespace UserPractic
 {
     public partial class DeleteProduct : Form
     {
-        private BL_User_Interface _productPL = new BL_User();
+        private BL_Product_Interface _productPL = new BL_Product();
         public DeleteProduct()
         {
             InitializeComponent();
