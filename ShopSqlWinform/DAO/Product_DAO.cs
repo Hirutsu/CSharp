@@ -35,7 +35,6 @@ namespace DAO
                 cmd.Parameters.Add(id);
                 connection.Open();
                 cmd.ExecuteNonQuery();
-
             }
         }
         public IEnumerable<Product> GetAll()

@@ -21,9 +21,30 @@ namespace Entity_User
         }
         public Product (string Name, double Price, int Sale, DateTime StartSale, DateTime EndSale)
         {
-            this.Name= Name;
-            this.Price = Price;
-            this.Sale = Sale;
+            if (Price < 0)
+            {
+                throw new ArgumentException();
+            }
+            else
+            {
+                this.Price = Price;
+            }
+            if(Sale<0 || Sale>100)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            else
+            { 
+                this.Sale = Sale;
+            }
+            if(Name=="")
+            {
+                throw new Exception();
+            }
+            else
+            {
+                this.Name= Name;
+            }
             this.StartSale = StartSale;
             this.EndSale = EndSale;
         }

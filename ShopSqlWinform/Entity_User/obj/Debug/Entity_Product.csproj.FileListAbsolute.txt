@@ -1,0 +1,8 @@
+I:\git\CSharp\ShopSqlWinform\Entity_User\bin\Debug\Entity_User.dll
+I:\git\CSharp\ShopSqlWinform\Entity_User\bin\Debug\Entity_User.pdb
+I:\git\CSharp\ShopSqlWinform\Entity_User\obj\Debug\Entity_Product.csprojAssemblyReference.cache
+I:\git\CSharp\ShopSqlWinform\Entity_User\obj\Debug\Entity_User.Properties.Resources.resources
+I:\git\CSharp\ShopSqlWinform\Entity_User\obj\Debug\Entity_Product.csproj.GenerateResource.cache
+I:\git\CSharp\ShopSqlWinform\Entity_User\obj\Debug\Entity_Product.csproj.CoreCompileInputs.cache
+I:\git\CSharp\ShopSqlWinform\Entity_User\obj\Debug\Entity_User.dll
+I:\git\CSharp\ShopSqlWinform\Entity_User\obj\Debug\Entity_User.pdb

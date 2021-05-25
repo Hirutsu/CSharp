@@ -49,11 +49,11 @@ namespace UserPractic
                 errorProvider1.SetError(button1, "Скидка должна быть от 0 до 100%");
                 return;
             }
-            if (float.Parse(TB_Price.Text)<0)
+/*            if (float.Parse(TB_Price.Text)<0)
             {
                 errorProvider1.SetError(button1, "Цена должна быть неотрицательной");
                 return;
-            }
+            }*/
             else
             {
                 Product user = new Product(TB_Name.Text, float.Parse(TB_Price.Text), int.Parse(TB_Sale.Text), DTP_StartSale.Value,DTP_EndSale.Value);
